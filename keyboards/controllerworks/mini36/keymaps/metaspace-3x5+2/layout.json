@@ -3,7 +3,7 @@
   "notes": "My awesome keymap",
   "documentation": "\"This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
   "keyboard": "controllerworks/mini36",
-  "keymap": "metaspace-3x5+2",
+  "keymap": "metaspace-3x5-2",
   "layout": "LAYOUT_split_3x5_3",
   "layers": [
     [
@@ -93,7 +93,6 @@
       "KC_QUOT",
       "KC_DQUO",
       "KC_ESC",
-
       "KC_TAB",
       "KC_LEFT",
       "KC_DOWN",
@@ -104,7 +103,6 @@
       "KC_RGUI",
       "KC_RSFT",
       "KC_ENT",
-
       "KC_NO",
       "KC_NO",
       "KC_NO",
@@ -115,7 +113,6 @@
       "KC_NO",
       "KC_NO",
       "KC_RALT",
-
       "KC_NO",
       "KC_NO",
       "KC_BSPC",
@@ -134,7 +131,6 @@
       "KC_ASTR",
       "KC_MINS",
       "KC_EQL",
-
       "KC_GRV",
       "KC_TILD",
       "KC_LPRN",
@@ -145,7 +141,6 @@
       "KC_RCBR",
       "KC_UNDS",
       "KC_PLUS",
-
       "KC_NO",
       "KC_NO",
       "KC_LBRC",
@@ -156,7 +151,6 @@
       "KC_GT",
       "KC_NO",
       "KC_NO",
-
       "KC_NO",
       "KC_TRNS",
       "KC_NO",
@@ -165,42 +159,36 @@
       "KC_NO"
     ],
     [
+      "BL_UP",
+      "RGB_MOD",
+      "RGB_VAI",
+      "RGB_SPI",
       "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-
-      "KC_NO",
+      "BL_TOGG",
       "KC_F1",
       "KC_F2",
       "KC_F3",
       "KC_F4",
-
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
+      "BL_DOWN",
+      "RGB_RMOD",
+      "RGB_VAD",
+      "RGB_SPD",
       "KC_TRNS",
-
-      "KC_NO",
+      "RGB_TOG",
       "KC_F5",
       "KC_F6",
       "KC_F7",
       "KC_F8",
-
+      "BL_BRTG",
       "KC_NO",
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "KC_NO",
-
       "KC_NO",
       "KC_F9",
       "KC_F10",
       "KC_F11",
       "KC_F12",
-
       "KC_NO",
       "KC_NO",
       "KC_NO",
