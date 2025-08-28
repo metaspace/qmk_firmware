@@ -476,25 +476,8 @@ void hk_process_mouse_report(const hk_pointer_state_t* pointer_state, report_mou
     g_hk_state.dirty = true;
 }
 
-report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-    if (!g_hk_state.is_main_side) {
-        return pointing_device_task_keymap(mouse_report);
-    }
-
-    // We get here only on the main side.
-    hk_process_mouse_report(&g_hk_state.main, &mouse_report);
-    g_hk_state.display.last_mouse = mouse_report;
-
-    return pointing_device_task_keymap(mouse_report);
-}
-
 #if defined(SPLIT_POINTING_ENABLE) && defined(POINTING_DEVICE_COMBINED)
 report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, report_mouse_t right_report) {
-    if (!g_hk_state.is_main_side) {
-        report_mouse_t report = pointing_device_combine_reports(left_report, right_report);
-        return pointing_device_task_combined_keymap(report);
-    }
-
     // We get here only on the main side. Use is_keyboard_left to know which report is main and which is peripheral.
     hk_process_mouse_report(&g_hk_state.main, is_keyboard_left() ? &left_report : &right_report);
     hk_process_mouse_report(&g_hk_state.peripheral, is_keyboard_left() ? &right_report : &left_report);
@@ -503,6 +486,17 @@ report_mouse_t pointing_device_task_combined_user(report_mouse_t left_report, re
     g_hk_state.display.last_mouse = report;
     return pointing_device_task_combined_keymap(report);
 }
+
+#else
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+    // We get here only on the main side.
+    hk_process_mouse_report(&g_hk_state.main, &mouse_report);
+    g_hk_state.display.last_mouse = mouse_report;
+
+    return pointing_device_task_keymap(mouse_report);
+}
+
 #endif
 
 // clang-format off
